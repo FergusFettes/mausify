@@ -22,7 +22,7 @@ def run_demos(verbose: Optional[bool] = typer.Option(False, "--verbose", "-v", h
         typer.echo(f"Command: {command}")
         if verbose:
             typer.echo("Running command...")
-        result = typer.run(command)
+        result = subprocess.run(command, shell=True, capture_output=True, text=True).stdout
         if verbose:
             typer.echo("Command output:")
         typer.echo(result)
