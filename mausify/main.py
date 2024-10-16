@@ -1,3 +1,4 @@
+import sys
 import typer
 import subprocess
 import re
@@ -88,13 +89,8 @@ def run_command(
             kwargs[key] = value if value else True
 
     # Handle piping from standard input
-    if pipe is None:
-        try:
-            pipe = typer.get_text_stream("stdin").read()
-            if not pipe.strip():
-                pipe = None
-        except Exception:
-            pipe = None
+    if pipe is None and not sys.stdin.isatty():
+        pipe = typer.get_text_stream("stdin").read().strip() or None
 
     # Run command
     result = func(*args, pipe=pipe, **kwargs)
