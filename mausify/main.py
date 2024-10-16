@@ -88,9 +88,11 @@ def run_command(
             kwargs[key] = value if value else True
 
     # Handle piping from standard input
-    if not pipe:
+    if pipe is None:
         try:
             pipe = typer.get_text_stream("stdin").read()
+            if not pipe.strip():
+                pipe = None
         except Exception:
             pipe = None
 
