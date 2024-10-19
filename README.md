@@ -24,7 +24,7 @@ pip install -r requirements.txt
 Run the script with the following syntax:
 
 ```
-python script_name.py <command> [ARGS]... [OPTIONS]
+python mausify/main.py <command> [ARGS]... [OPTIONS]
 ```
 
 ### Arguments
@@ -43,22 +43,22 @@ python script_name.py <command> [ARGS]... [OPTIONS]
 
 1. List available options for a command:
    ```
-   python script_name.py ls --print-args
+   python mausify/main.py ls --print-args
    ```
 
 2. Run a command with options:
    ```
-   python script_name.py ls -o l -o a /home
+   python mausify/main.py ls -o l -o a /home
    ```
 
 3. Pipe input to a command:
    ```
-   python script_name.py grep -o i -p "search text" search_pattern
+   python mausify/main.py grep -o i -p "search text" search_pattern
    ```
 
 4. Use standard input:
    ```
-   echo "Hello, World!" | python script_name.py grep World
+   echo "Hello, World!" | python mausify/main.py grep World
    ```
 
 ## Note
