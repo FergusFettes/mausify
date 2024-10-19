@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mausify"
-version = "0.0.2"
+version = "0.0.3"
 description = "Wraps cli commands for use in python"
 authors = ["fergus <fergusfettes@gmail.com>"]
 readme = "README.md"
